@@ -1,0 +1,35 @@
+<html>
+<head>
+<script>
+function recuperar()
+ {
+  var xmlhttp;
+   if (window.XMLHttpRequest)
+    {
+      xmlhttp=new XMLHttpRequest();
+    }
+
+xmlhttp.onreadystatechange=function()
+ {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+   {
+     xmlDoc=xmlhttp.responseXML;
+     document.getElementById("recup").innerHTML=txt;
+   }
+ }
+ 
+xmlhttp.open("GET","file:///C:/Users/Cristhian/Documents/UCP/Programacion%20en%20Ambiente%20Web/Ejercicios/clima.xml",true);
+
+xmlhttp.send();
+  }
+</script>
+</head>
+
+<body>
+ <h1>AJAX</h1>
+ <h2>Obtener informaci&oacute;n de un archivo XML a trav&eacute;s de AJAX.</h2>
+  <div id="recup">
+  <button type="button" onclick="recuperar()">Respuesta</button>
+  </div>
+</body>
+</html>
